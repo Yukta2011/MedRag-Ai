@@ -77,7 +77,7 @@ Python
 # rag_pipeline.py — Auto-fallback on any cloud failure
 answer = ask_cloud_model(prompt)
 if "Error" in answer or "UNAVAILABLE" in answer or "503" in answer:
-    print("⚠️  Cloud failed... 🔄 Falling back to local Mistral...")
+    print("  Cloud failed...  Falling back to local Mistral...")
     answer = ask_local_model(prompt)
     model_used = "local (Mistral) [cloud fallback]"
 
