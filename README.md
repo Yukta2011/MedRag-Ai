@@ -229,7 +229,7 @@ MedicalResearchAssistant-rag-v2/
 │   ├── process_pmc.py      # ETL: load → chunk → embed → store
 │   ├── local_llm.py        # Ollama/Mistral client (300s timeout)
 │   ├── cloud_llm.py        # Gemini 3.5 with multi-model fallback
-│   └── requirements.txt
+│   └── requirement.txt
 ├── frontend/
 │   ├── src/
 │   │   ├── App.jsx         # React app: video BG, search, HUD, modals
