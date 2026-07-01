@@ -1,0 +1,39 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+
+# ChromaDB
+vectorstore/*
+!vectorstore/.gitkeep
+
+# Data
+data/
+datasets/
+
+# Models
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
