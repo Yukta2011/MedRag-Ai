@@ -143,7 +143,7 @@ git clone https://github.com/Yukta2011/MedRag-Ai.git
 cd MedRag-Ai/backend
 python -m venv venv
 venv\Scripts\activate          # Windows
-pip install -r requirement.txt
+pip install -r requirements.txt
 
 
 2. Configure Environment
@@ -229,7 +229,7 @@ MedicalResearchAssistant-rag-v2/
 │   ├── process_pmc.py      # ETL: load → chunk → embed → store
 │   ├── local_llm.py        # Ollama/Mistral client (300s timeout)
 │   ├── cloud_llm.py        # Gemini 3.5 with multi-model fallback
-│   └── requirement.txt
+│   └── requirements.txt
 ├── frontend/
 │   ├── src/
 │   │   ├── App.jsx         # React app: video BG, search, HUD, modals
