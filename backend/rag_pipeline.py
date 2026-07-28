@@ -2,7 +2,8 @@ from retriever import retrieve
 from local_llm import ask_local_model
 from cloud_llm import ask_cloud_model
 from router import route_question
-
+from build_general_prompt import build_general_prompt
+from build_rag_prompt import build_rag_prompt
 
 # =====================================================
 # Format Sources
