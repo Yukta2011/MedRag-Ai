@@ -1,5 +1,4 @@
 import chromadb
-import os
 
 PERSIST_DIR = "./vectorstore"
 
@@ -12,7 +11,10 @@ collection = client.get_or_create_collection(
 
 
 def add_chunks(chunks, embeddings, metadatas, ids):
-    """Add chunks to vector store"""
+    """
+    Add chunks to ChromaDB
+    """
+
     collection.add(
         documents=chunks,
         embeddings=embeddings,
@@ -21,13 +23,23 @@ def add_chunks(chunks, embeddings, metadatas, ids):
     )
 
 
-def query_store(query_embedding, n_results=5):
-    """Query vector store"""
+def query_store(query_text, n_results=5):
+    """
+    Search ChromaDB using query text.
+    """
+
     return collection.query(
-        query_embeddings=[query_embedding],
+        query_texts=[query_text],
         n_results=n_results
     )
 
 
+def collection_stats():
+    return {
+        "documents": collection.count(),
+        "name": collection.name
+    }
+
+
 if __name__ == "__main__":
-    print(f"Collection count: {collection.count()}")
+    print(collection_stats())

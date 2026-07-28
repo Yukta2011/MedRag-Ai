@@ -584,3 +584,75 @@ html {
     gap: 2rem;
   }
 }
+/* ===========================
+   Research Papers Section
+=========================== */
+
+.sources {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.sources h3,
+.sources h4 {
+    color: #00e5ff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.source-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+    backdrop-filter: blur(10px);
+    transition: all .25s ease;
+}
+
+.source-card:hover {
+    border-color: rgba(0,229,255,.35);
+    transform: translateY(-2px);
+}
+
+/* Paper Title */
+
+.source-card h4 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Details */
+
+.source-card p {
+    margin: 4px 0;
+    color: #c7c7c7;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.source-card strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Read Full Paper Link */
+
+.source-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #8b8b8b;          /* Grey */
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: .25s;
+}
+
+.source-card a:hover {
+    color: #cfcfcf;          /* Light grey on hover */
+    text-decoration: underline;
+}

@@ -28,13 +28,14 @@ def load_pubmed_abstracts(query="artificial intelligence healthcare", max_result
             abstract = get_pubmed_abstract(pmid)
             if abstract and len(abstract) > 50:
                 abstracts.append({
-                    "pmid": pmid,
-                    "text": abstract,
-                    "title": f"PubMed:{pmid}",
-                    "authors": [],
-                    "journal": "PubMed",
-                    "year": "N/A"
-                })
+    "pmid": pmid,
+    "text": abstract,
+    "title": f"PubMed:{pmid}",
+    "authors": [],
+    "journal": "PubMed",
+    "year": "N/A",
+    "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+})
         except Exception as e:
             print(f"Error fetching PubMed {pmid}: {e}")
 

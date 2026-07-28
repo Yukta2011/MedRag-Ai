@@ -4,23 +4,48 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "mistral"
 
 
-def ask_local_model(prompt, model=None):
+def ask_local_model(prompt: str):
+    """
+    Sends an already-built prompt directly to Ollama.
+    """
+
     try:
         response = requests.post(
             OLLAMA_URL,
-            json={"model": model or MODEL, "prompt": prompt, "stream": False},
-            timeout=300
+            json={
+                "model": MODEL,
+                "prompt": prompt,
+                "stream": False,
+                "options": {
+                    "temperature": 0.2,
+                    "top_p": 0.9,
+                    "num_predict": 700
+                }
+            },
+            timeout=120
         )
-        result = response.json()
-        return result["response"]
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        return data.get("response", "No response from Ollama.")
+
     except requests.exceptions.Timeout:
-        return "Error: Ollama is taking too long. The model may be too slow for your hardware. Try a smaller model like 'phi3' or 'tinyllama'."
+        return "Error: Ollama timed out."
+
     except requests.exceptions.ConnectionError:
-        return "Error: Ollama is not running. Start it with 'ollama serve'"
+        return "Error: Could not connect to Ollama."
+
     except Exception as e:
         return f"Ollama Error: {e}"
 
 
 if __name__ == "__main__":
-    answer = ask_local_model("What is diabetes?")
-    print(answer)
+
+    prompt = """
+Explain what diabetes is.
+
+"""
+
+    print(ask_local_model(prompt))

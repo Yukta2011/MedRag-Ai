@@ -6,7 +6,7 @@ import os
 import time
 
 # Replace with your email
-Entrez.email = "yuktawalanju16gmail.com@gmail.com"
+Entrez.email = "yuktawalanju16@gmail.com"
 
 
 def search_pmc(query, max_results=5):
@@ -70,13 +70,14 @@ def get_article_text(pmc_id):
     text = body.get_text(" ", strip=True) if body else ""
 
     return {
-        "pmc_id": pmc_id,
-        "title": title,
-        "authors": authors,
-        "journal": journal,
-        "year": year,
-        "text": text
-    }
+    "pmc_id": pmc_id,
+    "title": title,
+    "authors": authors,
+    "journal": journal,
+    "year": year,
+    "text": text,
+    "url": f"https://pmc.ncbi.nlm.nih.gov/articles/PMC{pmc_id}/"
+}
 
 
 def load_pmc_articles(query="artificial intelligence healthcare", max_results=500):

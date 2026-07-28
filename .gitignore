@@ -37,3 +37,7 @@ Thumbs.db
 
 # Logs
 *.log
+# Databases
+backend/vectorstore/
+backend/*.db
+backend/chroma.sqlite3

@@ -27,5 +27,4 @@ def route_question(question):
 
 
 if __name__ == "__main__":
-    print(router_question("What is diabetes?"))  # cloud
-    print(router_question("Patient John Doe has diabetes symptoms"))  # local
+    print(route_question("What is diabetes?"))

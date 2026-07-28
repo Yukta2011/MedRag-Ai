@@ -66,7 +66,8 @@ def process_and_store(query="artificial intelligence healthcare", max_results=50
 
         if i + batch_size < len(all_chunks):
             time.sleep(0.5)
-
+            
+            
     print("" + "="*60)
     print(f"✅ Done! Stored {len(all_chunks)} chunks from {len(articles)} articles")
     print("="*60)

@@ -33,3 +33,4 @@ if __name__ == "__main__":
     test = "This is a test. " * 50
     chunks = chunk_text(test)
     print(f"Created {len(chunks)} chunks")
+
