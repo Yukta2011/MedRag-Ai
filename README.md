@@ -2,23 +2,29 @@
 
 ## Privacy-Aware Medical Research Assistant using Hybrid Retrieval-Augmented Generation
 
-MedRAG-AI is an AI-powered medical research assistant designed to provide evidence-based medical information by combining Retrieval-Augmented Generation (RAG), Large Language Models, semantic search, and biomedical research databases.
+MedRAG-AI is an AI-powered medical research assistant designed to provide evidence-based medical information by combining:
 
-The system retrieves relevant medical literature from PubMed and PMC Open Access research articles, processes the information using a vector search pipeline, and generates grounded responses using a hybrid LLM architecture.
+- Retrieval-Augmented Generation (RAG)
+- Large Language Models (LLMs)
+- Semantic Search
+- Biomedical Research Databases
+- Privacy-aware AI routing
+
+The system retrieves relevant medical literature from **PubMed** and **PMC Open Access research articles**, processes the information through a vector search pipeline, and generates grounded responses using a hybrid LLM architecture.
 
 The platform combines:
 
-* Retrieval-Augmented Generation for evidence-based responses
-* ChromaDB vector search for semantic retrieval
-* Sentence Transformer embeddings for medical document understanding
-* Ollama-based local LLM inference for privacy-sensitive queries
-* Google Gemini for general medical research reasoning
-* React-based interactive frontend
-* FastAPI backend API architecture
+- Retrieval-Augmented Generation for evidence-based responses
+- ChromaDB vector search for semantic retrieval
+- Sentence Transformer embeddings for medical document understanding
+- Ollama-based local LLM inference for privacy-sensitive queries
+- Google Gemini for general medical reasoning
+- React-based interactive frontend
+- FastAPI backend API architecture
 
----
 
 # System Architecture Overview
+
 
 ```
                          User
@@ -48,15 +54,15 @@ The platform combines:
 
  Local Ollama LLM              Document Retriever
 
-        |                               |
-        |                               v
+                                        |
+                                        v
 
-        |                         ChromaDB Vector Store
+                              ChromaDB Vector Store
 
-        |                               |
-        |                               v
+                                        |
+                                        v
 
-        |                      Medical Research Context
+                              Medical Research Context
 
         |                               |
         ---------------------------------
@@ -72,73 +78,104 @@ The platform combines:
                   React User Interface
 ```
 
----
 
 # Technology Stack
 
+
 ## Frontend Technologies
 
-| Technology | Purpose                                     |
-| ---------- | ------------------------------------------- |
-| React.js   | Component-based user interface development  |
-| Vite       | Fast frontend development and build tooling |
-| JavaScript | Frontend logic implementation               |
-| CSS3       | UI design and responsive styling            |
-| Fetch API  | Communication with backend APIs             |
+| Technology | Purpose |
+|------------|---------|
+| React.js | Component-based user interface development |
+| Vite | Fast frontend development and build tooling |
+| JavaScript | Frontend logic implementation |
+| CSS3 | UI design and responsive styling |
+| Fetch API | Backend API communication |
 
----
 
 ## Backend Technologies
 
-| Technology | Purpose                             |
-| ---------- | ----------------------------------- |
-| Python     | Core backend development            |
-| FastAPI    | High-performance REST API framework |
-| Uvicorn    | ASGI server for running FastAPI     |
-| SQLAlchemy | Database ORM layer                  |
-| Pydantic   | Data validation and API schemas     |
+| Technology | Purpose |
+|------------|---------|
+| Python | Core backend development |
+| FastAPI | High-performance REST API framework |
+| Uvicorn | ASGI server |
+| SQLAlchemy | Database ORM layer |
+| Pydantic | API data validation |
 
----
 
 ## Artificial Intelligence Stack
 
-| Technology                           | Purpose                                          |
-| ------------------------------------ | ------------------------------------------------ |
+| Technology | Purpose |
+|------------|---------|
 | Retrieval-Augmented Generation (RAG) | Grounding LLM responses using research documents |
-| Sentence Transformers                | Generating semantic embeddings                   |
-| ChromaDB                             | Vector database for similarity search            |
-| Ollama                               | Local LLM inference                              |
-| Mistral                              | Local language model                             |
-| Google Gemini API                    | Cloud-based reasoning model                      |
-| LangChain concepts                   | Prompting and retrieval workflow design          |
+| Sentence Transformers | Generating semantic embeddings |
+| ChromaDB | Vector database for similarity search |
+| Ollama | Local LLM inference |
+| Mistral | Local language model |
+| Google Gemini API | Cloud-based reasoning model |
+| LangChain Concepts | Retrieval and prompting workflow design |
 
----
 
-## Medical Data Sources
+# Medical Data Sources
 
-| Source          | Purpose                           |
-| --------------- | --------------------------------- |
-| PubMed          | Biomedical research articles      |
+| Source | Purpose |
+|--------|---------|
+| PubMed | Biomedical research articles |
 | PMC Open Access | Full-text scientific publications |
-| NCBI APIs       | Research paper retrieval          |
+| NCBI APIs | Research paper retrieval |
 
----
+
+# Environment Requirements
+
+
+## Python Version
+
+MedRAG-AI is developed and tested using:
+
+```
+Python 3.11.9
+```
+
+Python 3.11 is recommended because AI and scientific computing libraries provide better compatibility with this version.
+
+Used libraries include:
+
+- ChromaDB
+- Sentence Transformers
+- NumPy
+- Pandas
+- PyTorch-based dependencies
+
+
+## Required Software
+
+| Software | Version |
+|----------|---------|
+| Python | 3.11.9 |
+| Node.js | 18+ |
+| npm | 9+ |
+| Ollama | Latest |
+| Git | Latest |
+
 
 # Frontend Architecture
 
-The frontend is developed using React.js and provides an interactive interface for users to communicate with the medical AI assistant.
+The frontend is developed using React.js and provides an interactive interface for communicating with the medical AI assistant.
+
 
 ## Frontend Responsibilities
 
 The frontend handles:
 
-* User query input
-* API communication
-* Loading states
-* AI response rendering
-* Research paper citation display
-* Model information display
-* UI animations and styling
+- User query input
+- API communication
+- Loading states
+- AI response rendering
+- Research paper citation display
+- Model information display
+- UI animations and styling
+
 
 ## Frontend Structure
 
@@ -164,17 +201,16 @@ frontend
        Vite configuration
 ```
 
----
 
 # Frontend Request Flow
 
-Example:
 
-User asks:
+Example query:
 
 ```
 What are the symptoms of diabetes?
 ```
+
 
 Flow:
 
@@ -182,51 +218,45 @@ Flow:
 User Input
 
      |
-     v
 
 React Component
-(App.jsx)
 
      |
-     v
 
 API Request
 
      |
-     v
 
 FastAPI Backend
 
      |
-     v
 
 Response Received
 
      |
-     v
 
 UI Updates
 
      |
-     v
 
 Answer + Research Sources Displayed
 ```
 
----
 
 # Backend Architecture
 
+
 The backend manages:
 
-* API handling
-* Query processing
-* Research retrieval
-* LLM routing
-* Prompt generation
-* Response generation
+- API handling
+- Query processing
+- Medical research retrieval
+- LLM routing
+- Prompt generation
+- Response generation
 
-Backend structure:
+
+## Backend Structure
 
 ```
 backend
@@ -236,10 +266,10 @@ backend
 │     FastAPI application entry point
 │
 ├── rag_pipeline.py
-│     Complete RAG execution workflow
+│     Complete RAG workflow
 │
 ├── retriever.py
-│     Searches relevant medical documents
+│     Medical document retrieval
 │
 ├── vector_store.py
 │     ChromaDB interaction layer
@@ -248,13 +278,13 @@ backend
 │     Creates document embeddings
 │
 ├── chunker.py
-│     Splits documents into smaller sections
+│     Splits research documents
 │
 ├── pmc_loader.py
 │     Loads PMC research papers
 │
 ├── pubmed_loader.py
-│     Loads PubMed research papers
+│     Loads PubMed articles
 │
 ├── router.py
 │     Determines local/cloud model usage
@@ -266,30 +296,26 @@ backend
 │     Gemini integration
 │
 ├── build_index.py
-│     Creates vector database index
+│     Creates vector database
 │
 ├── build_rag_prompt.py
-│     Creates evidence-based prompts
+│     Evidence-based prompt generation
 │
 └── build_general_prompt.py
-      Creates general medical prompts
+      General prompt generation
 ```
 
----
 
 # Backend Request Processing Flow
 
-When a user submits a question:
+
+When a user submits a medical question:
+
 
 ## Step 1: API Request
 
 Frontend sends:
 
-```
-POST /ask
-```
-
-with:
 
 ```json
 {
@@ -297,46 +323,57 @@ with:
 }
 ```
 
+
+Endpoint:
+
+```
+POST /ask
+```
+
+
 ---
 
-## Step 2: Query Routing
+## Step 2: Privacy Routing
 
-The router analyzes the question.
 
-It checks for:
+The router checks:
 
-* Patient information
-* Medical records
-* Personal identifiers
-* Sensitive health information
+- Patient information
+- Medical records
+- Personal identifiers
+- Sensitive health information
+
 
 Decision:
 
+
 ```
-                 Question
+                Question
 
                     |
 
-              Privacy Router
+             Privacy Router
 
               /            \
 
-        Sensitive          General
+      Sensitive              General
 
-            |                 |
+          |                    |
 
-            v                 v
+          v                    v
 
-        Ollama             Gemini
+      Ollama               Gemini
+
 ```
 
----
 
 # RAG Pipeline Workflow
 
+
 ## Step 1: Query Processing
 
-The user's question is converted into a searchable representation.
+The user question is converted into a semantic embedding.
+
 
 Example:
 
@@ -344,15 +381,16 @@ Example:
 "What causes kidney disease?"
 ```
 
-becomes a semantic embedding.
+becomes a searchable vector representation.
+
 
 ---
 
 ## Step 2: Vector Retrieval
 
-The retriever searches ChromaDB.
 
 Process:
+
 
 ```
 Question
@@ -370,22 +408,24 @@ Similarity Search
 Top Relevant Research Chunks
 ```
 
-The system retrieves:
 
-* Research content
-* Paper metadata
-* Authors
-* Journal
-* Year
-* PMC ID
+Retrieved information:
+
+- Research content
+- Paper metadata
+- Authors
+- Journal
+- Year
+- PMC ID
+
 
 ---
 
 ## Step 3: Context Creation
 
-Retrieved documents are combined into a context.
 
-Example:
+Retrieved documents are combined:
+
 
 ```
 Medical Research Context:
@@ -397,11 +437,14 @@ Paper 2:
 Clinical outcomes...
 ```
 
+
 ---
 
 ## Step 4: Prompt Generation
 
+
 The system creates an evidence-based prompt:
+
 
 ```
 Answer using only the provided medical research.
@@ -411,24 +454,25 @@ Do not create unsupported findings.
 Provide a clear medical explanation.
 ```
 
+
 ---
 
-## Step 5: LLM Response Generation
+## Step 5: Response Generation
 
-The selected model generates the final answer.
 
 Output contains:
 
-* Medical explanation
-* Supporting research papers
-* Citations
-* Model information
+- Medical explanation
+- Supporting research papers
+- Citations
+- Model information
 
----
 
 # Research Document Processing Pipeline
 
+
 Before answering queries, medical literature is indexed.
+
 
 ```
 PubMed / PMC Papers
@@ -464,11 +508,12 @@ Embedding Creation
 ChromaDB Storage
 ```
 
----
 
 # Database and Vector Storage
 
+
 ChromaDB stores:
+
 
 ```
 Vector Database
@@ -488,9 +533,9 @@ Vector Database
       └── PMC ID
 ```
 
----
 
 # Local and Cloud LLM Architecture
+
 
 ## Local Model
 
@@ -500,16 +545,19 @@ Technology:
 Ollama + Mistral
 ```
 
+
 Used for:
 
-* Privacy-sensitive queries
-* Offline processing
-* Local inference
+- Privacy-sensitive queries
+- Offline processing
+- Local inference
+
 
 Advantages:
 
-* Data remains locally processed
-* No external API transmission
+- Medical data remains locally processed
+- No external API transmission
+
 
 ---
 
@@ -521,24 +569,26 @@ Technology:
 Google Gemini API
 ```
 
+
 Used for:
 
-* General medical questions
-* Complex reasoning
-* Research explanations
+- General medical questions
+- Complex reasoning
+- Research explanations
 
----
 
 # Automatic Fallback Mechanism
 
+
 If Gemini fails:
+
 
 ```
 Gemini Request
 
       |
 
- API Failure?
+API Failure?
 
       |
 
@@ -553,19 +603,23 @@ Ollama Local Model
 Generated Response
 ```
 
----
 
 # Running the Project
 
-## Backend Setup
 
-Create environment:
+# Backend Setup
+
+
+Create Python 3.11 environment:
+
 
 ```bash
 python -m venv venv
 ```
 
+
 Activate:
+
 
 Windows:
 
@@ -573,13 +627,17 @@ Windows:
 venv\Scripts\activate
 ```
 
+
 Install dependencies:
 
+
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
+
 Run backend:
+
 
 ```bash
 cd backend
@@ -587,17 +645,19 @@ cd backend
 uvicorn app:app --reload
 ```
 
+
 Backend:
 
 ```
 http://127.0.0.1:8000
 ```
 
----
 
-## Frontend Setup
+# Frontend Setup
+
 
 Install dependencies:
+
 
 ```bash
 cd frontend
@@ -605,11 +665,14 @@ cd frontend
 npm install
 ```
 
+
 Run:
+
 
 ```bash
 npm run dev
 ```
+
 
 Frontend:
 
@@ -617,11 +680,12 @@ Frontend:
 http://localhost:5173
 ```
 
----
 
 # Building Research Index
 
-To generate the vector database:
+
+Generate vector database:
+
 
 ```bash
 cd backend
@@ -629,29 +693,57 @@ cd backend
 python build_index.py
 ```
 
+
 This performs:
 
-1. Research paper loading
-2. Text extraction
-3. Chunk generation
-4. Embedding creation
-5. Vector database storage
 
----
+- Research paper loading
+- Text extraction
+- Document cleaning
+- Chunk generation
+- Embedding creation
+- ChromaDB storage
+
 
 # Key Features
 
-* Medical research question answering
-* Evidence-grounded responses
-* PubMed and PMC integration
-* Hybrid LLM architecture
-* Privacy-aware routing
-* Local AI inference
-* Semantic document retrieval
-* Research paper citations
-* React-based interface
-* FastAPI backend
-* ChromaDB vector search
 
----
+✅ Medical research question answering
 
+✅ Evidence-grounded responses
+
+✅ PubMed and PMC integration
+
+✅ Hybrid LLM architecture
+
+✅ Privacy-aware routing
+
+✅ Local AI inference
+
+✅ Semantic document retrieval
+
+✅ Research paper citations
+
+✅ React-based interface
+
+✅ FastAPI backend
+
+✅ ChromaDB vector search
+
+
+# Future Improvements
+
+
+- Multi-language medical assistance
+- Voice-based medical queries
+- Medical report upload and analysis
+- Timeline-based patient health insights
+- Doctor-friendly research summaries
+- Advanced biomedical models
+
+
+# Disclaimer
+
+MedRAG-AI is an AI research assistant and does not replace professional medical advice, diagnosis, or treatment.
+
+Always consult qualified healthcare professionals for medical decisions.
