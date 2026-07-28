@@ -1,43 +1,46 @@
-biopython
+# Backend Framework
+fastapi==0.111.0
+uvicorn==0.30.1
+pydantic==2.7.4
+python-multipart==0.0.9
+aiofiles==23.2.1
+httpx==0.27.0
 
-requests
 
-beautifulsoup4
+# Environment
+python-dotenv==1.0.1
 
-lxml
 
-python-dotenv
+# API Requests / Web Scraping
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.2.2
 
-chromadb
 
-sentence-transformers
+# Biomedical Data Processing
+biopython==1.83
 
-langchain
 
-langchain-community
+# RAG + Vector Database
+chromadb==0.5.5
+sentence-transformers==3.0.1
 
-transformers
 
-torch
+# LangChain
+langchain==0.2.16
+langchain-community==0.2.16
 
-numpy
 
-pandas
+# Machine Learning
+transformers==4.44.2
+torch==2.4.0
 
-scikit-learn
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
 
-tqdm
+tqdm==4.66.5
 
-google-genai
 
-fastapi
-
-uvicorn
-
-pydantic
-
-python-multipart
-
-aiofiles
-
-httpx
+# Google Gemini
+google-genai==0.3.0
