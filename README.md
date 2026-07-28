@@ -583,7 +583,7 @@ Run backend:
 
 ```bash
 cd backend
-
+python app.py
 uvicorn app:app --reload
 ```
 
