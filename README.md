@@ -21,6 +21,7 @@ The platform combines:
 - Google Gemini for general medical reasoning
 - React-based interactive frontend
 - FastAPI backend API architecture
+<img width="1893" height="844" alt="image" src="https://github.com/user-attachments/assets/ec793934-dd46-428d-81c6-1d1694e93d79" />
 
 
 # System Architecture Overview
